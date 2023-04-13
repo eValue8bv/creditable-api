@@ -57,4 +57,3 @@ If you would like to contribute, please feel free to submit a pull request on ou
 ## License
 
 This package is released under the [MIT License](https://opensource.org/licenses/MIT).
-```
