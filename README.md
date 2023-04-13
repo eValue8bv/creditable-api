@@ -13,6 +13,7 @@ To install the package, use [Composer](https://getcomposer.org/) by running the 
 
 ```sh
 composer require evalue8bv/creditable-api
+```
 
 ## Usage
 
