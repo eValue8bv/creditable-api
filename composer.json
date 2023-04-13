@@ -16,8 +16,7 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
-    "your-dependencies-here": "^1.0"
+    "php": ">=7.4"
   },
   "autoload": {
     "psr-4": {
