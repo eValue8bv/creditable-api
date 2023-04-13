@@ -48,7 +48,7 @@ try {
 
 ## API Documentation
 
-For more information about the Creditable API, please refer to the [official documentation](https://api.creditable.news/docs/).
+For more information about the Creditable API, please refer to the [official documentation](https://www.creditable.news/en/integration-manual).
 
 ## Contributing
 
