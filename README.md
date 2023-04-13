@@ -2,7 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/evalue8bv/creditable-api/v)](https://packagist.org/packages/evalue8bv/creditable-api)
 [![Total Downloads](https://poser.pugx.org/evalue8bv/creditable-api/downloads)](https://packagist.org/packages/evalue8bv/creditable-api)
-[![Latest Unstable Version](https://poser.pugx.org/evalue8bv/creditable-api/v/develop)](https://packagist.org/packages/evalue8bv/creditable-api)
 [![License](https://poser.pugx.org/evalue8bv/creditable-api/license)](https://packagist.org/packages/evalue8bv/creditable-api)
 
 The Creditable API PHP package is a simple and easy-to-use wrapper for the Creditable API. This package allows you to integrate Creditable PayWall functionalities into your PHP projects.
