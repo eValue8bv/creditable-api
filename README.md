@@ -6,6 +6,14 @@
 
 The Creditable API PHP package is a simple and easy-to-use wrapper for the Creditable API. This package allows you to integrate Creditable PayWall functionalities into your PHP projects.
 
+## Requirements
+
+To use the Creditable pay per article button, the following things are required:
+
+* Get yourself a free Creditable Partner Account at https://partner.creditable.news. No signup costs are applicable.
+* Login to your dashboard at https://partner.creditable.news and add your mediatitle(s).
+* An apikey will be generated for each media title you add.
+
 ## Installation
 
 To install the package, use [Composer](https://getcomposer.org/) by running the following command:
