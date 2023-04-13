@@ -27,7 +27,7 @@ class CreditablePayWall
      * @return CreditableResponse|boolean
      * @throws Exception If the request fails.
      */
-    public function check($data = [])
+    public function check(array $data = []): CreditableResponse
     {
         if (!function_exists('curl_version') && !ini_get('allow_url_fopen')) {
             throw new Exception("Curl and allow_url_fopen are both disabled");
@@ -54,7 +54,7 @@ class CreditablePayWall
      * @return array The output response.
      * @throws Exception If the request fails.
      */
-    private function fgcCheckPaid($data = [])
+    private function fgcCheckPaid(array $data = []): array
     {
         $endpoint = self::ApiServer . "/credit/check.php";
         $data['apikey'] = $this->apiKey;
@@ -91,7 +91,7 @@ class CreditablePayWall
      * @throws Exception If the request fails.
      */
 
-    private function curlCheckPaid(array $data = [])
+    private function curlCheckPaid(array $data = []): array
     {
         //Add the apikey to the data
         $data['apikey'] = $this->apiKey;
