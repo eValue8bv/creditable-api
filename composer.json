@@ -1,0 +1,29 @@
+{
+  "name": "evalue8bv/creditable-api",
+  "description": "Official API SDK for Creditable",
+  "type": "library",
+  "keywords": [
+    "php",
+    "creditable",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "eValue8",
+      "email": "development@evalue8.nl",
+      "homepage": "https://evalue8.nl"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "your-dependencies-here": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Creditable\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
