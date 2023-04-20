@@ -8,10 +8,9 @@ class CreditableResponse {
     private $paid = false;
     private $uid = "";
 
-    function __construct($data) {
-        $this->paid = $data['paid'];
+    function __construct($statusCode, $data) {
+        $this->paid = $statusCode === 200;
         $this->uid = $data['uid'];
-        $this->expiresAt = $data['expires_at'];
     }
 
     public function isPaid() {
