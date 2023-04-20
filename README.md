@@ -36,7 +36,7 @@ $creditable = new CreditablePayWall($apiKey);
 
 // Example usage
 $data = [
-...
+....
 ];
 
 try {
