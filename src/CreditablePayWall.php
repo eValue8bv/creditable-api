@@ -39,12 +39,8 @@ class CreditablePayWall
             [$status, $response] = $this->fgcCheckPaid($data);
         }
 
-        if ($status !== 200) {
-            return false;
-        }
-
         $response = json_decode($response);
-        return new CreditableResponse($response);
+        return new CreditableResponse($status, $response);
     }
 
     /**
