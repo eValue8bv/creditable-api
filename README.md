@@ -35,8 +35,8 @@ The javascript code of Creditable requires you to have the following HTML elemen
 </div>
 ```
 Include the following stylesheet in your head element:
-```html
-<link rel="stylesheet" type="text/css" href="<?= $creditable->getCssDependancy(); ?>;" />
+```php
+<link rel="stylesheet" type="text/css" href="<?= $creditable->getCssDependency(); ?>;" />
 ```
 
 ### Checking for article access
@@ -97,7 +97,7 @@ try {
 ```php
 <!-- creditable scripts -->
 <?php if (!$result->isPaid()){ ?>
-<script src="<?= $creditable->getJsDependancy(); ?>" type="text/javascript">
+<script src="<?= $creditable->getJsDependency(); ?>" type="text/javascript">
     <!--//
     var cUid = <?= $result->getUid(); ?>;
     //-->
