@@ -1,6 +1,6 @@
 {
-  "name": "evalue8bv/creditable-api",
-  "description": "Official API SDK for Creditable",
+  "name": "evalue8bv/creditable-paywall",
+  "description": "Official PayWall SDK for Creditable",
   "type": "library",
   "keywords": [
     "php",
