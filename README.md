@@ -93,7 +93,7 @@ try {
     echo 'Error: ' . $e->getMessage();
 }
 ```
-### JavaScript include tag:
+### JavaScript footer script:
 ```php
 <!-- creditable scripts -->
 <?php if (!$result->isPaid()){ ?>
