@@ -3,9 +3,9 @@
 </p>
 # Creditable PayWall PHP Package
 
-[![Latest Stable Version](https://poser.pugx.org/evalue8bv/creditable-paywall/v)](https://packagist.org/packages/evalue8bv/creditable-api)
-[![Total Downloads](https://poser.pugx.org/evalue8bv/creditable-paywall/downloads)](https://packagist.org/packages/evalue8bv/creditable-api)
-[![License](https://poser.pugx.org/evalue8bv/creditable-paywall/license)](https://packagist.org/packages/evalue8bv/creditable-api)
+[![Latest Stable Version](https://poser.pugx.org/evalue8bv/creditable-paywall/v)](https://packagist.org/packages/evalue8bv/creditable-paywall)
+[![Total Downloads](https://poser.pugx.org/evalue8bv/creditable-paywall/downloads)](https://packagist.org/packages/evalue8bv/creditable-paywall)
+[![License](https://poser.pugx.org/evalue8bv/creditable-paywall/license)](https://packagist.org/packages/evalue8bv/creditable-paywall)
 
 The Creditable-Paywall PHP package is a simple and easy-to-use wrapper for the Creditable API. Its purpose is to enable the integration of a Creditable button into an existing paywall system, thus enabling customers to pay for articles on a pay-per-article basis with credits.
 
