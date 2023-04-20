@@ -83,9 +83,8 @@ $data = [
 ];
 
 try {
-    $response = $creditable->check($data);
-
-    if ($response->isPaid()) {
+    $result = $creditable->check($data);
+    if ($result->isPaid()) {
         // Access granted
     } else {
         // Access denied
@@ -97,10 +96,10 @@ try {
 ### JavaScript include tag:
 ```php
 <!-- creditable scripts -->
-<?php if (!$creditable_paid){ ?>
+<?php if (!$result->isPaid()){ ?>
 <script src="<?= $creditable->getJsDependancy(); ?>" type="text/javascript">
     <!--//
-    var cUid = <?= $creditable->uid; ?>;
+    var cUid = <?= $result->getUid(); ?>;
     //-->
 </script>
 <?php } ?>
