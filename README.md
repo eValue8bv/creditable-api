@@ -61,9 +61,6 @@ $creditable_article_desc = "<<ARTICLE DESC>>"; // Alphanumeric (optional) teaser
 $creditable_article_tags = "<<TAGS>>"; // Alphanumeric (optional) comma delimited list or json (optional keywords, used to find recommended articles for users)
 $creditable_article_img = "<<ARTICLE IMG URL>>"; // Alphanumeric (optional) URL for article image
 
-// SET DEFAULT STATE
-$creditable_paid = false;
-
 // GET LOCAL CREDITABLE JWT COOKIE
 $creditable_cookie = $_COOKIE['cjwt'] ?? "";
 
@@ -116,3 +113,6 @@ If you would like to contribute, please feel free to submit a pull request on ou
 ## License
 
 This package is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Support ##
+Contact: [www.creditable.news](https://www.creditable.news) — info@creditable.news — +31 (0)24 350 54 00
