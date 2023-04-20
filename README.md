@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://www.creditable.news/thumbs/800%C3%97200%C3%97m/logo/Logo-V2-Creditable-flexible-access-to-online-articles.svg" width="800" height="200"/>
+</p>
 # Creditable PayWall PHP Package
 
 [![Latest Stable Version](https://poser.pugx.org/evalue8bv/creditable-api/v)](https://packagist.org/packages/evalue8bv/creditable-api)
