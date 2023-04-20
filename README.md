@@ -1,4 +1,4 @@
-# Creditable API PHP Package
+# Creditable PayWall PHP Package
 
 [![Latest Stable Version](https://poser.pugx.org/evalue8bv/creditable-api/v)](https://packagist.org/packages/evalue8bv/creditable-api)
 [![Total Downloads](https://poser.pugx.org/evalue8bv/creditable-api/downloads)](https://packagist.org/packages/evalue8bv/creditable-api)
