@@ -39,7 +39,7 @@ class CreditablePayWall
             [$status, $response] = $this->fgcCheckPaid($data);
         }
 
-        $response = json_decode($response);
+        $response = json_decode($response, true);
         return new CreditableResponse($status, $response);
     }
 
