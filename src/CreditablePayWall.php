@@ -127,12 +127,12 @@ class CreditablePayWall
 
     public function getJsDependency(): string
     {
-        return "https://partner.creditable.news/paywall/js/creditable.js";
+        return "https://partner.creditable.news/plugins/paywall/js/creditable.min.js";
     }
 
     public function getCssDependency(): string
     {
-        return "https://partner.creditable.news/paywall/css/creditable.css";
+        return "https://partner.creditable.news/plugins/paywall/css/creditable.min.css";
     }
 
     public static function slugify($text, string $divider = '-')
