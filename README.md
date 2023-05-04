@@ -59,8 +59,8 @@ $creditable_article_title = "<<ARTICLE TITLE>>"; // Alphanumeric (required)
 $creditable_topic_id = "<<TOPIC ID>>"; // Alphanumeric (required)
 $creditable_topic_name = "<<TOPIC NAME>>"; // Alphanumeric (required)
 $creditable_article_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; // Alphanumeric (required)
-$creditable_article_lang = "nl-NL"; // ISO (required)
-$creditable_article_author = "<<AUTHOR>>"; // Alphanumeric (optional)
+$creditable_article_lang = "en-GB"; // ISO (required)
+$creditable_article_authors  =   "<<ARTICLE AUTHORS>>";   // Alphanumeric (comma separated) String (optional)
 $creditable_article_desc = "<<ARTICLE DESC>>"; // Alphanumeric (optional) teaser, used to tease recommended articles to users)
 $creditable_article_tags = "<<TAGS>>"; // Alphanumeric (optional) comma delimited list or json (optional keywords, used to find recommended articles for users)
 $creditable_article_img = "<<ARTICLE IMG URL>>"; // Alphanumeric (optional) URL for article image
@@ -77,7 +77,7 @@ $data = [
     'topic_name' => $creditable_topic_name,
     'article_url' => $creditable_article_url,
     'article_lang' => $creditable_article_lang,
-    'article_author' => $creditable_article_author,
+    'article_authors' => $creditable_article_authors,
     'article_desc' => $creditable_article_desc, 
     'article_tags' => $creditable_article_tags,
     'article_img' => $creditable_article_img
@@ -98,11 +98,12 @@ try {
 ```php
 <!-- creditable scripts -->
 <?php if (!$result->isPaid()){ ?>
-<script src="<?= $creditable->getJsDependency(); ?>" type="text/javascript">
+<script type="text/javascript">
     <!--//
-    var cUid = <?= $result->getUid(); ?>;
+    const cUid = <?= $result->getUid(); ?>;
     //-->
 </script>
+<script src="<?= $creditable->getJsDependency(); ?>"></script>
 <?php } ?>
 ```
 
