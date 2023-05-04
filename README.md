@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.creditable.news/thumbs/800%C3%97200%C3%97m/logo/Logo-V2-Creditable-flexible-access-to-online-articles.svg" width="800" height="200"/>
+  <img src="https://raw.githubusercontent.com/eValue8bv/creditable-paywall/main/logo.png"/>
 </p>
 
 # Creditable PayWall PHP Package
