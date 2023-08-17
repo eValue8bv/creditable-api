@@ -22,7 +22,7 @@ namespace Creditable;
 
 class CreditablePayWall
 {
-    private const ApiServer = "https://api.creditable.news/";
+    private const ApiServer = "https://api.creditable.news";
     private $apiKey;
 
     public function __construct($apiKey)
