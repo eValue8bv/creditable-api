@@ -32,7 +32,7 @@ class CreditablePayWall
 
     /**
      * @param string $apiKey The Creditable API key
-     * @throws Exception if empty
+     * @throws \Exception if empty
      */
     private function setApiKey($apiKey)
     {
@@ -43,12 +43,12 @@ class CreditablePayWall
     /**
      * @param array $data Associative array containing POST values.
      * @return CreditableResponse|boolean
-     * @throws Exception If the request fails.
+     * @throws \Exception If the request fails.
      */
     public function check(array $data = []): CreditableResponse
     {
         if (!function_exists('curl_version') && !ini_get('allow_url_fopen')) {
-            throw new Exception("Curl and allow_url_fopen are both disabled");
+            throw new \Exception("Curl and allow_url_fopen are both disabled");
         }
 
         if (function_exists('curl_version')) {
@@ -66,7 +66,7 @@ class CreditablePayWall
      *
      * @param array $data Associative array containing POST values.
      * @return array The output response.
-     * @throws Exception If the request fails.
+     * @throws \Exception If the request fails.
      */
     private function fgcCheckPaid(array $data = []): array
     {
@@ -87,7 +87,7 @@ class CreditablePayWall
 
         $streamContext = stream_context_create($streamOptions);
         if (!$response = file_get_contents($endpoint, false, $streamContext)) {
-            throw new Exception("Failed to open stream");
+            throw new \Exception("Failed to open stream");
         }
 
         $status_line = $http_response_header[0];
@@ -102,7 +102,7 @@ class CreditablePayWall
      *
      * @param array $data Associative array containing POST values.
      * @return array The output response.
-     * @throws Exception If the request fails.
+     * @throws \Exception If the request fails.
      */
 
     private function curlCheckPaid(array $data = []): array
@@ -129,7 +129,7 @@ class CreditablePayWall
 
         if (!$response = curl_exec($curl)) {
             curl_close($curl);
-            throw new Exception(curl_errno($curl) . " CURL Failed ");
+            throw new \Exception(curl_errno($curl) . " CURL Failed ");
         }
 
         // Set default error to 400.
