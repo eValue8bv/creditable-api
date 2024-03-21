@@ -22,12 +22,17 @@ namespace Creditable;
 
 class CreditablePayWall
 {
-    private const ApiServer = "https://api.creditable.news";
+    private $ApiServer = "https://api.creditable.news";
+    private $options = [];
     private $apiKey;
 
-    public function __construct($apiKey)
+    public function __construct($apiKey, $options = [])
     {
+        $this->options = $options;
         $this->setApiKey($apiKey);
+        if (isset($options['beta']) && $options['beta'] === true) {
+            $this->setApiServer("https://api-beta.creditable.news");
+        }
     }
 
     /**
@@ -38,6 +43,14 @@ class CreditablePayWall
     {
         $apiKey = trim($apiKey);
         $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @param string $apiServer The Creditable API server
+     */
+    private function setApiServer($apiServer)
+    {
+        $this->ApiServer = $apiServer;
     }
 
     /**
@@ -70,19 +83,19 @@ class CreditablePayWall
      */
     private function fgcCheckPaid(array $data = []): array
     {
-        $endpoint = self::ApiServer . "/credit/check.php";
+        $endpoint = $this->ApiServer . "/credit/check.php";
         $data['apikey'] = $this->apiKey;
         $data = json_encode($data);
 
         $streamOptions = [
             'http' =>
-                [
-                    'method' => 'POST', //We are using the POST HTTP method.
-                    'header' => ['Content-Type: application/json' . "\r\n"
-                        . 'Content-Length: ' . strlen($data) . "\r\n"],
-                    'content' => $data, //Our URL-encoded query string.
-                    "ignore_errors" => true
-                ]
+            [
+                'method' => 'POST', //We are using the POST HTTP method.
+                'header' => ['Content-Type: application/json' . "\r\n"
+                    . 'Content-Length: ' . strlen($data) . "\r\n"],
+                'content' => $data, //Our URL-encoded query string.
+                "ignore_errors" => true
+            ]
         ];
 
         $streamContext = stream_context_create($streamOptions);
@@ -114,7 +127,7 @@ class CreditablePayWall
         $data = json_encode($data);
 
         // set the endpoint
-        $endpoint = self::ApiServer . "/credit/check.php";
+        $endpoint = $this->ApiServer . "/credit/check.php";
 
         // Create a curl handle
         $curl = curl_init();
@@ -145,11 +158,17 @@ class CreditablePayWall
 
     public function getJsDependency(): string
     {
+        if (isset($this->options['beta']) && $this->options['beta'] === true) {
+            return "https://partner-beta.creditable.news/plugins/paywall/js/creditable.min.js";
+        }
         return "https://partner.creditable.news/plugins/paywall/js/creditable.min.js";
     }
 
     public function getCssDependency(): string
     {
+        if (isset($this->options['beta']) && $this->options['beta'] === true) {
+            return "https://partner-beta.creditable.news/plugins/paywall/css/creditable.min.css";
+        }
         return "https://partner.creditable.news/plugins/paywall/css/creditable.min.css";
     }
 
