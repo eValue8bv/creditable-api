@@ -14,9 +14,9 @@ The Creditable-Paywall PHP package is a simple and easy-to-use wrapper for the C
 
 To use the Creditable pay per article button, the following things are required:
 
-* Get yourself a free Creditable Partner Account at https://partner.creditable.news. No signup costs are applicable.
-* Login to your dashboard at https://partner.creditable.news and add your media title(s).
-* An apikey will be generated for each media title you add.
+- Get yourself a free Creditable Partner Account at https://partner.creditable.news. No signup costs are applicable.
+- Login to your dashboard at https://partner.creditable.news and add your media title(s).
+- An apikey will be generated for each media title you add.
 
 ## Installation
 
@@ -32,18 +32,21 @@ The javascript code of Creditable requires you to have the following HTML elemen
 
 ```html
 <div id="creditable-container" class="creditable-container">
-    <!-- the button -->
-    <div id="creditable-button"></div>
-    <!-- popup window -->
-    <div id="creditable-window"></div>
+  <!-- the button -->
+  <div id="creditable-button"></div>
+  <!-- popup window -->
+  <div id="creditable-window"></div>
 </div>
 ```
+
 Include the following stylesheet in your head element:
+
 ```php
 <link rel="stylesheet" type="text/css" href="<?= $creditable->getCssDependency(); ?>;" />
 ```
 
 ### Checking for article access
+
 ```php
 <?php
 
@@ -58,6 +61,8 @@ $creditable_article_id = "<<ARTICLE ID>>"; // Alphanumeric (required)
 $creditable_article_title = "<<ARTICLE TITLE>>"; // Alphanumeric (required)
 $creditable_topic_id = "<<TOPIC ID>>"; // Alphanumeric (required)
 $creditable_topic_name = "<<TOPIC NAME>>"; // Alphanumeric (required)
+$creditable_topic_desc = "<<TOPIC DESC>>"; // Alphanumeric (optional)
+$creditable_topic_url = "<<TOPIC URL>>"; // Alphanumeric (optional)
 $creditable_article_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; // Alphanumeric (required)
 $creditable_article_lang = "en-GB"; // ISO (required)
 $creditable_article_authors  =   "<<ARTICLE AUTHORS>>";   // Alphanumeric (comma separated) String (optional)
@@ -75,10 +80,12 @@ $data = [
     'article_name' => $creditable_article_title,
     'topic_id' => $creditable_topic_id,
     'topic_name' => $creditable_topic_name,
+    'topic_desc' => $creditable_topic_desc,
+    'topic_url' => $creditable_topic_nurl,
     'article_url' => $creditable_article_url,
     'article_lang' => $creditable_article_lang,
     'article_authors' => $creditable_article_authors,
-    'article_desc' => $creditable_article_desc, 
+    'article_desc' => $creditable_article_desc,
     'article_tags' => $creditable_article_tags,
     'article_img' => $creditable_article_img
 ];
@@ -94,7 +101,9 @@ try {
     echo 'Error: ' . $e->getMessage();
 }
 ```
+
 ### JavaScript footer script:
+
 ```php
 <!-- creditable scripts -->
 <?php if (!$result->isPaid()){ ?>
@@ -119,5 +128,6 @@ If you would like to contribute, please feel free to submit a pull request on ou
 
 This package is released under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Support ##
+## Support
+
 Contact: [www.creditable.news](https://www.creditable.news) — info@creditable.news — +31 (0)24 350 54 00
