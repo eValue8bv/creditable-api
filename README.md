@@ -45,7 +45,7 @@ Include the following stylesheet in your head element:
 <link rel="stylesheet" type="text/css" href="<?= $creditable->getCssDependency(); ?>;" />
 ```
 
-### Setting production environment to dev
+### Setting environment to dev
 
 ```php
 require_once 'vendor/autoload.php';
