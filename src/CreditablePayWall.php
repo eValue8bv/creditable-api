@@ -26,11 +26,18 @@ class CreditablePayWall
     private $options = [];
     private $apiKey;
 
+    /**
+     * Constructs a new instance of the CreditablePayWall class.
+     *
+     * @param string $apiKey The Creditable API key.
+     * @param array $options An optional array of configuration options. Possible keys:
+     *                       'environment' - If set to 'dev', the API server will be set to the beta server.
+     */
     public function __construct($apiKey, $options = [])
     {
         $this->options = $options;
         $this->setApiKey($apiKey);
-        if (isset($options['beta']) && $options['beta'] === true) {
+        if (isset($options['environment']) && $options['environment'] === 'dev') {
             $this->setApiServer("https://api-beta.creditable.news");
         }
     }
@@ -158,7 +165,7 @@ class CreditablePayWall
 
     public function getJsDependency(): string
     {
-        if (isset($this->options['beta']) && $this->options['beta'] === true) {
+        if (isset($this->options['environment']) && $this->options['environment'] === 'dev') {
             return "https://partner-beta.creditable.news/plugins/paywall/js/creditable.min.js";
         }
         return "https://partner.creditable.news/plugins/paywall/js/creditable.min.js";
@@ -166,7 +173,7 @@ class CreditablePayWall
 
     public function getCssDependency(): string
     {
-        if (isset($this->options['beta']) && $this->options['beta'] === true) {
+        if (isset($this->options['environment']) && $this->options['environment'] === 'dev') {
             return "https://partner-beta.creditable.news/plugins/paywall/css/creditable.min.css";
         }
         return "https://partner.creditable.news/plugins/paywall/css/creditable.min.css";
