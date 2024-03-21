@@ -45,6 +45,22 @@ Include the following stylesheet in your head element:
 <link rel="stylesheet" type="text/css" href="<?= $creditable->getCssDependency(); ?>;" />
 ```
 
+### Setting production environment to dev
+
+```php
+require_once 'vendor/autoload.php';
+
+use Creditable\CreditablePayWall;
+
+$apiKey = 'your-api-key-here';
+$options = [
+    'environment' => 'dev'
+];
+$creditable = new CreditablePayWall($apiKey, $options);
+
+// Rest of the code
+```
+
 ### Checking for article access
 
 ```php
@@ -81,7 +97,7 @@ $data = [
     'topic_id' => $creditable_topic_id,
     'topic_name' => $creditable_topic_name,
     'topic_desc' => $creditable_topic_desc,
-    'topic_url' => $creditable_topic_nurl,
+    'topic_url' => $creditable_topic_url,
     'article_url' => $creditable_article_url,
     'article_lang' => $creditable_article_lang,
     'article_authors' => $creditable_article_authors,
