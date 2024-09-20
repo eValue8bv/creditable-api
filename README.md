@@ -126,7 +126,7 @@ try {
 <script type="text/javascript">
     <!--//
     const cUid = <?= $result->getUid(); ?>;
-    var aff_id = ''; // optional aff_id here
+    var cAff_id = ''; // optional aff_id here
     //-->
 </script>
 <script src="<?= $creditable->getJsDependency(); ?>"></script>
